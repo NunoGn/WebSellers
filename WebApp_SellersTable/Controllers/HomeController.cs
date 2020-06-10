@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApp_SellersTable.Models;
+using WebApp_SellersTable.Models.ViewModels;
 
 namespace WebApp_SellersTable.Controllers
 {
