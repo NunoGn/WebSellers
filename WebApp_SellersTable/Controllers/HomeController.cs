@@ -17,8 +17,10 @@ namespace WebApp_SellersTable.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-
+            ViewData["Message"] = "WebApp Sellers Table MVC";
+            ViewData["Author"] = "Nuno Correia";
+            ViewData["Email"] = "nunocorreia@email.com";
+ 
             return View();
         }
 
