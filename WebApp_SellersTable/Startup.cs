@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using WebApp_SellersTable.Models;
+using WebApp_SellersTable.Data;
 
 namespace WebApp_SellersTable
 {
@@ -39,14 +40,17 @@ namespace WebApp_SellersTable
             services.AddDbContext<WebApp_SellersTableContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("WebApp_SellersTableContext"),
                     builder => builder.MigrationsAssembly("WebApp_SellersTable")));
+
+            services.AddScoped<SeedingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingService)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                seedingService.Seed();
             }
             else
             {
