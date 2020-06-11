@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using WebApp_SellersTable.Data;
 
 namespace WebApp_SellersTable
 {
@@ -33,6 +35,9 @@ namespace WebApp_SellersTable
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<WebApp_SellersTableContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("WebApp_SellersTableContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
