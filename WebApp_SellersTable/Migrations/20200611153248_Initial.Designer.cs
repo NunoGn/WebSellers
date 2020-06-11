@@ -3,7 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebApp_SellersTable.Data;
+using WebApp_SellersTable;
+using WebApp_SellersTable.Models;
 
 namespace WebApp_SellersTable.Migrations
 {

@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using WebApp_SellersTable.Data;
+using WebApp_SellersTable.Models;
 
 namespace WebApp_SellersTable
 {

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using WebApp_SellersTable.Data;
+using WebApp_SellersTable;
 using WebApp_SellersTable.Models;
 
 namespace WebApp_SellersTable.Controllers

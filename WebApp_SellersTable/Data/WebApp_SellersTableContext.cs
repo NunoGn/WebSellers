@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebApp_SellersTable.Models;
 
-namespace WebApp_SellersTable.Data
+namespace WebApp_SellersTable.Models
 {
     public class WebApp_SellersTableContext : DbContext
     {
@@ -14,6 +14,9 @@ namespace WebApp_SellersTable.Data
         {
         }
 
-        public DbSet<WebApp_SellersTable.Models.Department> Department { get; set; }
+        public DbSet<Department> Department { get; set; }
+        public DbSet<SalesRecord> SalesRecord { get; set; }
+        public DbSet<Seller> Seller { get; set; }
+   
     }
 }
