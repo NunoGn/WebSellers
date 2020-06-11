@@ -37,7 +37,8 @@ namespace WebApp_SellersTable
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<WebApp_SellersTableContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("WebApp_SellersTableContext")));
+                    options.UseMySql(Configuration.GetConnectionString("WebApp_SellersTableContext"),
+                    builder => builder.MigrationsAssembly("WebApp_SellersTable")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
