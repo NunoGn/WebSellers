@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using WebApp_SellersTable.Models;
 using WebApp_SellersTable.Data;
+using WebApp_SellersTable.Services;
 
 namespace WebApp_SellersTable
 {
@@ -42,6 +43,7 @@ namespace WebApp_SellersTable
                     builder => builder.MigrationsAssembly("WebApp_SellersTable")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
