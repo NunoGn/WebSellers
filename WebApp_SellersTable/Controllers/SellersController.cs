@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApp_SellersTable.Services;
+using WebApp_SellersTable.Models;
 
 namespace WebApp_SellersTable.Controllers
 {
@@ -22,5 +23,16 @@ namespace WebApp_SellersTable.Controllers
             var list = _sellerService.FindAll();
             return View(list);
         }
+        public IActionResult Create()
+        {
+            return View(); 
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]//Para prevenir ataques aproveitado a autenticação xsrf/csrf attacks
+        public IActionResult Create(Seller seller)
+        {
+            _sellerService.Insert(seller);
+            return RedirectToAction(nameof(Index));
+        }        
     }
 }
